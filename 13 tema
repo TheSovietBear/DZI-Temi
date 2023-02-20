@@ -1,0 +1,26 @@
+using System;
+using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra;
+
+namespace Zadachka;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        var A = Matrix<double>.Build
+            .DenseOfArray(new double[,] {
+            { 1, 2, 5 },
+            { 1, -1, 2 },
+            { 3, -6, -1 }
+        });
+        var b = Vector<double>.Build.Dense(new double[]
+            { -9, 3, 25 });
+        var x = A.Solve(b);
+
+        Console.WriteLine("x1= " + x[0]); // x1 = 2
+        Console.WriteLine("x2= " + x[1]); // x2 = -3
+        Console.WriteLine("x3= " + x[2]. Round(1)); // x3 = -1
+        
+    }
+}
