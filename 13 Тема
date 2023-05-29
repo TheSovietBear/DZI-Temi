@@ -60,3 +60,34 @@ internal class Program
         
     }
 }
+
+
+
+using MathNet.Numerics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Crombo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter N");
+            var n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter K");
+            var k = int.Parse(Console.ReadLine());
+            var perm = Combinatorics.Permutations(n);
+            Console.WriteLine("Permutation" + perm);
+            var comb = Combinatorics.Combinations(n, k);
+            Console.WriteLine("Combination" + comb);
+            var vars = Combinatorics.Variations(n, k);
+            Console.WriteLine("Variations" + vars);
+
+        }
+    }
+}
+
